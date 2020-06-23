@@ -137,23 +137,9 @@ function hitDecision() {
   hitIdx = Math.floor(Math.random() * slotImg.length);
   decision = Math.random() < luckyPer; //addtional feature
 }
-//slotCredits == origin value
-// Batting_coin == batting new value
-function CreditSum(val) {
-  document.getElementById("slotsCredits") = val;
-  if (document.getElementById("slotCredits").value) {
-    document.getElementById("slotsCredits") =
-      parseInt(document.getElementById("Batting_coin").value) +
-      parseInt(document.getElementById("slotCredits").value);
-    document.write(
-      "<p>COIN :" + document.getElementById("slotsCredits") + "</p>"
-    );
-  }
-}
 
 /* Start Slot */
 function slotStart() {
-  //
   // Disabled start button
   $("#startBtn").prop("disabled", true);
 
@@ -198,12 +184,7 @@ function slotStart() {
       }
 
       // active start button
-      //slotCredits were - 1 coin
-      if ($("#startBtn").prop("disabled", false)) {
-        var td = document.getElementById("slotCredits");
-        var n = Number(td.innerHTML);
-        td.innerHTML = n - 1;
-      }
+      $("#startBtn").prop("disabled", false);
 
       // Delete Queue
       $(this).dequeue();
@@ -228,3 +209,20 @@ function slotMove(obj, slotno) {
     }
   );
 }
+
+function bling() {
+  if (flag === 0) {
+    document.querySelector("h1").style.color = "#d6806e";
+    flag++;
+  } else if (flag === 1) {
+    document.querySelector("h1").style.color = "#fbb666";
+    flag++;
+  } else if (flag === 2) {
+    document.querySelector("h1").style.color = "#f9f871";
+    flag++;
+  } else {
+    document.querySelector("h1").style.color = "#f2ecff";
+    flag = 0;
+  }
+}
+setInterval(bling, 1000);
