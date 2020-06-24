@@ -2,8 +2,8 @@
 ```
 📍Goal : Make slotmachine for web-app  
 Language : Javascript / CSS / HTML  
-framework : Jquery  
-Note : Just try to make wheel rotation test for react.js  
+Libraries : JQuery  
+ **Plus Note : Just try to make wheel rotation test for react.js **  
 ```
 
  Screenshots
@@ -24,9 +24,8 @@ Slot machine page has following interface elements:
 ✅ Debug area 
 
 ```
-## Result
-
-### Successful requirements
+## Result  
+### Successful requirements  
 1. Reels  
    ⭕️ Reel movement :   
    📍 Use CSS marginTop   
@@ -37,19 +36,31 @@ Slot machine page has following interface elements:
    ⭕️ Reel visualization (Show Top Bottom line partly)  
 
 2. pay-table 
-     
-3. balance indicator (text-box)
-   ⭕️ 
-4. SPIN button 
-   ⭕️ Spin costs player : 1 coin.  
-   ⭕️ Reel playtime : Total - 2 seconds  
+   ⭕️ 3 CHERRY symbols on top line 2000  
+   ⭕️ 3 CHERRY symbols on center line 1000  
+   ⭕️ 3 CHERRY symbols on bottom line 4000  
+   ⭕️ 3 7 symbols on any line 150   
+   ⭕️ 3 2xBAR symbols on any line 20  
+   ⭕️ 3 BAR symbols on any line 10   
+    
+3. balance indicator (text-box)  
+   ⭕️ Fixed text-box range 1-5000  
+4. SPIN button   
+   ⭕️ Spin costs player : 1 coin. (Credit will down 1 points when game is stopped.) 
+   ⭕️ Reel playtime : Total - 2 seconds    
                       One by one (starting from left) having 0.5 sec delay between landings.
 ### Deficient requirements
-   ☠️☠️☠️☠️  Debug area 
+   ☠️☠️☠️☠️  Debug area  
+   ☠️☠️☠️☠️ pay-table  
+        Any combination of CHERRY and 7 on any line 75 3 3xBAR symbols on any line 50   
+        Combination of any BAR symbols on any line 5  
 ### Added requirements
    ➕ Lucky percentage  
    ➕ Reel animation (Stopped pattern)  
       Add Bouncing effect with easing libraries function. 
+   ➕ Use google Font   
+      Used Font name : Press Start 2P  
+    
 
 
 ## Game process 
