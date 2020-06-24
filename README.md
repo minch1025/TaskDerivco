@@ -28,19 +28,28 @@ Slot machine page has following interface elements:
 
 ### Successful requirements
 1. Reels  
-    Reel movement :   
+   ⭕️ Reel movement :   
    📍 Use CSS marginTop   
     (The shape of the slot moves down by starting at the above position with the initial value of MarginTop minus (-150px) and slowly changing MarginTop from            negative to zero(0px).)    
     
    📍JQuery "jQuery easing" Libraries  
     Use animation movement.  
+   ⭕️ Reel visualization (Show Top Bottom line partly)  
 
-2. pay-table  
+2. pay-table 
+     
 3. balance indicator (text-box)
+   ⭕️ 
 4. SPIN button 
+   ⭕️ Spin costs player : 1 coin.  
+   ⭕️ Reel playtime : Total - 2 seconds  
+                      One by one (starting from left) having 0.5 sec delay between landings.
 ### Deficient requirements
-5. Debug area 
+   ☠️☠️☠️☠️  Debug area 
 ### Added requirements
+   ➕ Lucky percentage  
+   ➕ Reel animation (Stopped pattern)  
+      Add Bouncing effect with easing libraries function. 
 
 
 ## Game process 
