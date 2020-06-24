@@ -69,3 +69,4 @@ Slot machine page has following interface elements:
             ▶️  Reel pay-table decision ( + OR Nothing ) ▶️ Credit updated   
   Sub     : Insert Batting Coin ▶️  Click Batting button  ▶️ Credit updated  
 ## Memo
+<img width="300" alt="DemoImage3" src="https://user-images.githubusercontent.com/46733592/85551759-48558780-b65d-11ea-9ad1-88b65fa619d6.png">
