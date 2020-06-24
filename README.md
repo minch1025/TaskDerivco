@@ -35,7 +35,7 @@ Slot machine page has following interface elements:
     Use animation movement.  
    ⭕️ Reel visualization (Show Top Bottom line partly)  
 
-2. pay-table 
+2. pay-table  
    ⭕️ 3 CHERRY symbols on top line 2000  
    ⭕️ 3 CHERRY symbols on center line 1000  
    ⭕️ 3 CHERRY symbols on bottom line 4000  
