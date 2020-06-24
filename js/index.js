@@ -16,24 +16,23 @@ var slotEasing = ["swing", "easeOutQuart", "easeOutBack", "easeOutBounce"];
 // Rolling count
 var slotDuration = 5;
 // Jack pot percentage （1=100%、0.5=50%）
-var luckyPer = 0.3;
+var luckyPer = 1.0;
 
 /*---------------------
  Definitions
 -----------------------*/
-//이미지 인덱스
+//Image Index
 var hitIdx;
-//회전하기
+//Image Rotation
 var easingIdx;
-//결정하기
+//Make a decision
 var decision;
-//시간
 var time;
-// 길이가 0인 예전 방식의 배열 생성 (가로행)
+//
 var result1 = new Array();
-// 길이가 0인 예전 방식의 배열 생성
+//
 var result2 = new Array();
-// 길이가 0인 예전 방식의 배열 생성
+//
 var result3 = new Array();
 
 /*---------------------
@@ -47,14 +46,14 @@ $(document).ready(function () {
   slotCreate($("#slots_b .wrapper"), 2);
   // BOX C slot create
   slotCreate($("#slots_c .wrapper"), 3);
-
-  // Result
-  hitDecision();
 });
 
 /* Create Slot screen*/
 function slotCreate(obj, slotno) {
   // Animation stop（Actions when Animation is in Progress）
+  console.log(obj);
+  console.log(slotno);
+
   obj.stop(true, true);
   // Clear elements in the frame
   obj.children().remove();
@@ -62,6 +61,7 @@ function slotCreate(obj, slotno) {
   // Save Last Result
   // Save Image Index on Line 1
   var save_result1 = result1[slotno];
+
   // 2行目の画像INDEXをセーブ
   var save_result2 = result2[slotno];
   // 3行目の画像INDEXをセーブ
@@ -74,10 +74,6 @@ function slotCreate(obj, slotno) {
 
     // 이미지 파일 조정
     if (i == middleNum - 1) {
-      if (decision) {
-        //이겻다고판정되면 위닝 인덱스 넣기.
-        idx = hitIdx;
-      }
       // 마지막에 1행에 오는 화면
       result1[slotno] = idx;
     } else if (i == middleNum) {
@@ -85,14 +81,9 @@ function slotCreate(obj, slotno) {
       if (decision) {
         //이겻다고판정되면 위닝 인덱스 넣기.
         idx = hitIdx;
-        var obj = document.getElementById("img1");
       }
       result2[slotno] = idx;
     } else if (i == middleNum + 1) {
-      if (decision) {
-        //이겻다고판정되면 위닝 인덱스 넣기.
-        idx = hitIdx;
-      }
       // 마지막 3행에 오는 화면
       result3[slotno] = idx;
     } else if (i == slotNum - 2) {
@@ -114,11 +105,11 @@ function slotCreate(obj, slotno) {
         idx = save_result3;
       }
     }
-    console.log(slotno, result1, result2, result3);
+
     obj.append(
       "<div class='slot'>" +
         "<img border='0'" +
-        " src='Reel/" +
+        " src='Reel_img/" +
         slotImg[idx] +
         "'" +
         " width='40' height='26' />" +
@@ -135,20 +126,25 @@ function slotCreate(obj, slotno) {
 /* Hit Decision */
 function hitDecision() {
   hitIdx = Math.floor(Math.random() * slotImg.length);
-  decision = Math.random() < luckyPer; //addtional feature
+  //boolean value
+  decision = Math.random() < luckyPer;
+  console.log(decision); //addtional feature
 }
 //slotCredits == origin value
 // Batting_coin == batting new value
-function CreditSum(val) {
-  document.getElementById("slotsCredits") = val;
-  if (document.getElementById("slotCredits").value) {
-    document.getElementById("slotsCredits") =
-      parseInt(document.getElementById("Batting_coin").value) +
-      parseInt(document.getElementById("slotCredits").value);
-    document.write(
-      "<p>COIN :" + document.getElementById("slotsCredits") + "</p>"
-    );
-  }
+
+/* Insert batting number */
+/* Range 1-5000 */
+
+function BattingCoin() {
+  console.log("hello");
+  console.log($("#BattingText").val());
+  console.log($("#slotCredits").text());
+  var addCredit = $("#BattingText").val();
+  var currentCredit = $("#slotCredits").text();
+  //console.log(typeof addCredit);
+  //console.log(typeof currentCredit);
+  $("#slotCredits").text(parseInt(addCredit) + parseInt(currentCredit));
 }
 
 /* Start Slot */
@@ -188,12 +184,43 @@ function slotStart() {
       // Hit decision
       if (result2[1] == result2[2] && result2[1] == result2[3]) {
         // Hit message alert
-        $("#slotMsg").html("BINGO !!!");
+        console.log(result2[1]);
+        console.log(result2[2]);
+        console.log(result2[3]);
 
-        //score +2000
-        //
+        //Bingo for 2row 2line
+        if (result2[1] + result2[2] + result2[3] == 12) {
+          var currentCredit = $("#slotCredits").text();
+          $("#slotCredits").text(parseInt(currentCredit) + 1000);
+        } else if (result2[1] + result2[2] + result2[3] == 9) {
+          var currentCredit = $("#slotCredits").text();
+          $("#slotCredits").text(parseInt(currentCredit) + 150);
+        } else if (result2[1] + result2[2] + result2[3] == 6) {
+          var currentCredit = $("#slotCredits").text();
+          $("#slotCredits").text(parseInt(currentCredit) + 50);
+        } else if (result2[1] + result2[2] + result2[3] == 3) {
+          var currentCredit = $("#slotCredits").text();
+          $("#slotCredits").text(parseInt(currentCredit) + 20);
+        } else if (result2[1] + result2[2] + result2[3] == 0) {
+          var currentCredit = $("#slotCredits").text();
+          $("#slotCredits").text(parseInt(currentCredit) + 10);
+        } else $("#slotMsg").html("BINGO !!!");
+
+        //Cherry for  1 line bingo
+      } else if (result1[1] == result1[2] && result1[1] == result1[3]) {
+        if (result1[1] + result1[2] + result1[3] == 12) {
+          var currentCredit = $("#slotCredits").text();
+          $("#slotCredits").text(parseInt(currentCredit) + 2000);
+        }
+        $("#slotMsg").html("BINGO !!!");
+        // Cherry for 3 line bingo
+      } else if (result3[1] == result3[2] && result3[1] == result3[3]) {
+        if (result3[1] + result3[2] + result3[3] == 12) {
+          var currentCredit = $("#slotCredits").text();
+          $("#slotCredits").text(parseInt(currentCredit) + 4000);
+        }
+        $("#slotMsg").html("BINGO !!!");
       } else {
-        // Failure message alert
         $("#slotMsg").html("TRY AGAIN");
       }
 

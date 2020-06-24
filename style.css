@@ -51,16 +51,6 @@ h1 {
   width: 100%;
 }
 
-/*poin box*/
-.point-box {
-  background-color: #4e4e4e;
-  width: 150px;
-  height: 30px;
-  margin: 5px auto 0 auto;
-  text-align: center;
-  border-radius: 20px;
-}
-
 #Credit {
   float: left;
   font-size: 10px;
@@ -87,12 +77,6 @@ h1 {
   width: 300px;
   height: 200px;
   font-size: 30px;
-}
-#Batting_btn {
-  border: 1px solid skyblue;
-  background-color: rgba(0, 0, 0, 0);
-  color: skyblue;
-  padding: 5px;
 }
 
 /**********************************************************/
