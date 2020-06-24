@@ -28,7 +28,7 @@ Slot machine page has following interface elements:
 
 ### Successful requirements
 1. Reels  
-   - Reel movement : 
+    Reel movement :   
    📍 Use CSS marginTop   
     (The shape of the slot moves down by starting at the above position with the initial value of MarginTop minus (-150px) and slowly changing MarginTop from            negative to zero(0px).)    
     
