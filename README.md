@@ -46,7 +46,7 @@ Slot machine page has following interface elements:
 3. balance indicator (text-box)  
    ⭕️ Fixed text-box range 1-5000  
 4. SPIN button   
-   ⭕️ Spin costs player : 1 coin. (Credit will down 1 points when game is stopped.) 
+   ⭕️ Spin costs player : 1 coin. (Credit will down 1 points when game is stopped.)  
    ⭕️ Reel playtime : Total - 2 seconds    
                       One by one (starting from left) having 0.5 sec delay between landings.
 ### Deficient requirements
@@ -65,6 +65,7 @@ Slot machine page has following interface elements:
 
 ## Game process 
 
-
-
+ Original : Click Start Button  ▶️  Reel Rotation start   ▶️ Reel stopped  ▶️ Crdit -1 coin (play coin)  
+            ▶️  Reel pay-table decision ( + OR Nothing ) ▶️ Credit updated   
+  Sub     : Insert Batting Coin ▶️  Click Batting button  ▶️ Credit updated  
 ## Memo
