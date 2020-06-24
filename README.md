@@ -1,6 +1,6 @@
 # TaskDerivco
 ```
-Goal : Make slotmachine for web-app  
+📍Goal : Make slotmachine for web-app  
 Language : Javascript / CSS / HTML  
 framework : Jquery  
 Note : Just try to make wheel rotation test for react.js  
@@ -17,9 +17,33 @@ Note : Just try to make wheel rotation test for react.js
 
 Slot machine page has following interface elements:   
 ```
-1. reels  
-2. pay-table  
-3. balance indicator (text-box)  
-4. SPIN button.   
-5. Debug area  
+✅ Reels Image(5 symbols in order: 3xBAR, BAR, 2xBAR, 7, CHERRY)
+✅ pay-table  
+✅ balance indicator (text-box)  
+✅ SPIN button  
+✅ Debug area 
+
 ```
+## Result
+
+### Successful requirements
+1. Reels  
+   - Reel movement : 
+   📍 Use CSS marginTop  
+    (The shape of the slot moves down by starting at the above position with the initial value of MarginTop minus (-150px) and slowly changing MarginTop from            negative to zero(0px).)  
+    JQuery "jQuery easing" Libraries
+   📍 Use animation movement. 
+
+2. pay-table  
+3. balance indicator (text-box)
+4. SPIN button 
+### Deficient requirements
+5. Debug area 
+### Added requirements
+
+
+## Game process 
+
+
+
+## Memo
