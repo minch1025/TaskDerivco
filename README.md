@@ -29,10 +29,11 @@ Slot machine page has following interface elements:
 ### Successful requirements
 1. Reels  
    - Reel movement : 
-   📍 Use CSS marginTop  
-    (The shape of the slot moves down by starting at the above position with the initial value of MarginTop minus (-150px) and slowly changing MarginTop from            negative to zero(0px).)  
-    JQuery "jQuery easing" Libraries
-   📍 Use animation movement. 
+   📍 Use CSS marginTop   
+    (The shape of the slot moves down by starting at the above position with the initial value of MarginTop minus (-150px) and slowly changing MarginTop from            negative to zero(0px).)    
+    
+   📍JQuery "jQuery easing" Libraries  
+    Use animation movement.  
 
 2. pay-table  
 3. balance indicator (text-box)
