@@ -68,7 +68,7 @@ Slot machine page has following interface elements:
 
  Original : Click Start Button  ▶️  Reel Rotation start   ▶️ Reel stopped  ▶️ Crdit -1 coin (play coin)  
             ▶️  Reel pay-table decision ( + OR Nothing ) ▶️ Credit updated   
-  Sub     : Insert Batting Coin ▶️  Click Batting button  ▶️ Credit updated  
+  Sub     : Insert Batting Coin (Slot validation (1-5000))▶️  Click Batting button  ▶️ Credit updated  
 ## Memo
 Explain about Task time controll  
 ```
