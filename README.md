@@ -72,15 +72,15 @@ Slot machine page has following interface elements:
 ## Memo
 Explain about Task time controll  
 ```
-I took a little times to select the target languages and architect.
-( It was the first time to faced with game logic and method   )
-First time,  I try to make a slot from my main language of React.js
+It took a little time to select the language and architect.
+It was the first time for me to faced with game logic and method.
+First, I tried to make a slot using React.js
 (Please check https://github.com/minch1025/ReelTest)
-However, I realized that Pure javascript and JQuery is the general and simple way to figured out method to solve this game logic.
+However, I realized that pure Javascript and JQuery is a simple way to solve this game logic.
 So this works affected to solve the other left tasks.
-By the way, Javascript and JQuery set project work is first time to  experienced to me. 
-I found out several useful things and difference with my main languages. 
-If you want to interest and more need to know about my skills, please let me know.  
+By the way, I used JQuery for the first time.
+I found out several useful things and differences compare to React.js
+If you are interested and would like to know more about my skills, please let me know.
 ```
 https://github.com/minch1025/ReelTest
 <img width="300" alt="DemoImage3" src="https://user-images.githubusercontent.com/46733592/85551759-48558780-b65d-11ea-9ad1-88b65fa619d6.png">
