@@ -58,7 +58,7 @@ Slot machine page has following interface elements:
 ### Added requirements
    ➕ Lucky percentage  
    ➕ Reel animation (Stopped pattern)  
-      Add Bouncing effect with easing libraries function. 
+      Add Bouncing effect with easing libraries function.   
    ➕ Use google Font   
       Used Font name : Press Start 2P  
     
