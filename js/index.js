@@ -16,7 +16,7 @@ var slotEasing = ["swing", "easeOutQuart", "easeOutBack", "easeOutBounce"];
 // Rolling count
 var slotDuration = 5;
 // Jack pot percentage （1=100%、0.5=50%）
-var luckyPer = 1.0;
+var luckyPer = 0.3;
 
 /*---------------------
  Definitions
@@ -61,30 +61,29 @@ function slotCreate(obj, slotno) {
   // Save Last Result
   // Save Image Index on Line 1
   var save_result1 = result1[slotno];
-
-  // 2行目の画像INDEXをセーブ
+  //save index on 2 line
   var save_result2 = result2[slotno];
-  // 3行目の画像INDEXをセーブ
+  //save index on 3line
   var save_result3 = result3[slotno];
 
   // Create slot tag
   for (var i = 1; i <= slotNum; i++) {
-    // 화면을 배열에서 랜덤으로출력해준다.
+    //screen showed randomly on screen array.
     var idx = Math.floor(Math.random() * slotImg.length);
 
-    // 이미지 파일 조정
+    // adjust image file
     if (i == middleNum - 1) {
-      // 마지막에 1행에 오는 화면
+      // line 1 after slot rotation.
       result1[slotno] = idx;
     } else if (i == middleNum) {
       // the last image on the first line
       if (decision) {
-        //이겻다고판정되면 위닝 인덱스 넣기.
+        //If winning decision, input index.
         idx = hitIdx;
       }
       result2[slotno] = idx;
     } else if (i == middleNum + 1) {
-      // 마지막 3행에 오는 화면
+      // line 3 after slot rotation.
       result3[slotno] = idx;
     } else if (i == slotNum - 2) {
       // the first image that appears on the first line
@@ -128,23 +127,23 @@ function hitDecision() {
   hitIdx = Math.floor(Math.random() * slotImg.length);
   //boolean value
   decision = Math.random() < luckyPer;
-  console.log(decision); //addtional feature
 }
-//slotCredits == origin value
-// Batting_coin == batting new value
 
 /* Insert batting number */
+/* Slot validation */
 /* Range 1-5000 */
-
 function BattingCoin() {
-  console.log("hello");
-  console.log($("#BattingText").val());
-  console.log($("#slotCredits").text());
   var addCredit = $("#BattingText").val();
-  var currentCredit = $("#slotCredits").text();
-  //console.log(typeof addCredit);
-  //console.log(typeof currentCredit);
-  $("#slotCredits").text(parseInt(addCredit) + parseInt(currentCredit));
+  if (Number.isNaN(parseInt(addCredit))) {
+    alert("Please insesrt number !");
+  } else if (1 <= parseInt(addCredit) && parseInt(addCredit) <= 5000) {
+    var currentCredit = $("#slotCredits").text();
+    //console.log(typeof addCredit);
+    //console.log(typeof currentCredit);
+    $("#slotCredits").text(parseInt(addCredit) + parseInt(currentCredit));
+  } else {
+    alert("1-5000 is required!");
+  }
 }
 
 /* Start Slot */
@@ -184,9 +183,6 @@ function slotStart() {
       // Hit decision
       if (result2[1] == result2[2] && result2[1] == result2[3]) {
         // Hit message alert
-        console.log(result2[1]);
-        console.log(result2[2]);
-        console.log(result2[3]);
 
         //Bingo for 2row 2line
         if (result2[1] + result2[2] + result2[3] == 12) {
@@ -237,14 +233,14 @@ function slotStart() {
     });
 }
 
-/* スロット画像移動 */
+/* Slot image movement */
 function slotMove(obj, slotno) {
   if (obj.css("margin-top") != startPos + "px") {
-    // スロットが動いた後であれば、スロット画像を再作成
+    //If slot was worked, slot image recreate.
     slotCreate(obj, slotno);
   }
 
-  // スロット画像の移動アニメーション
+  // Slot image movement animation.
   obj.animate(
     {
       "margin-top": stopPos + "px",
